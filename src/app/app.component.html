@@ -1,0 +1,38 @@
+<!-- NAVIGATION -->
+<nav class="navbar navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Lista de Usuarios</a>
+</nav>
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+   Bienvenido {{ name }}!
+  </h1>
+  <img width="150" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+</div>
+
+<div class="container p-4">
+    <div class="row">
+      <!-- FORM -->
+      <div class="col-md-8 offset-md-2 mt-2">
+        <div class="card">
+          <form class="card-body">
+          <h3 class="card-title">Agregar Cliente</h3>
+          <label for="id">Id</label>
+          <input type="text" name="id" #newid class="form-control" autofocus>
+
+          <label for="name">Nombre</label>
+          <input type="text" name="name" #newname class="form-control">
+
+            <label for="address">Direcciòn</label>
+          <input type="text" name="address" #newaddress class="form-control">
+
+          <button (click)="addCli(newid, newname, newaddress)" class="btn btn-primary btn-block mt-4">
+           Guadar
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<app-client *ngFor="let c of cli" [client]="c"></app-client>
+</div>
